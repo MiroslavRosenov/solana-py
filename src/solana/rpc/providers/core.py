@@ -72,7 +72,7 @@ class _HTTPProviderCore:  # pylint: disable=too-few-public-methods
         headers = {"Content-Type": "application/json"}
         if self.extra_headers:
             headers.update(self.extra_headers)
-        return {"url": self.endpoint_uri, "headers": headers}
+        return {"url": self.endpoint_uri, "headers": headers, "timeout": self.timeout}
 
     def _build_request_kwargs(self, body: Body) -> Dict[str, Any]:
         common_kwargs = self._build_common_request_kwargs()
